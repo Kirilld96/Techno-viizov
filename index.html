@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Метько Роман</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #111;
+  background-image:
+    url("https://drive.google.com/thumbnail?id=1jawzApx_WCMn3Z-pcTiq6xHxB5CLD5ZJ&sz=w1920")
+    ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.img-cont {
+  width: min(75rem, 100% - 2rem);
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 2.5rem) 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+
+.img-cont > div {
+  --step: 0rem;
+  width: min(100%, clamp(20rem, 62vw, 38.75rem));
+  margin-right: var(--step);
+  background: #fff;
+  border-radius: 1rem;
+  padding: clamp(0.625rem, 1.4vw, 1rem);
+
+  display: grid;
+  grid-template-columns: 1fr clamp(8.125rem, 18vw, 14.375rem);
+  align-items: start;
+  column-gap: 0; 
+}
+
+
+.img-cont > div:nth-child(1) { --step: 0rem; }
+.img-cont > div:nth-child(2) { --step: 1.75rem; }
+.img-cont > div:nth-child(3) { --step: 3.5rem; }
+.img-cont > div:nth-child(4) { --step: 5.25rem; }
+
+
+.img-cont > div > img {
+  grid-column: 2;
+  width: 100%;
+  height: auto;
+  display: block; 
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
+
+.img-cont > div > div:not(.vid-area) {
+  grid-column: 1;
+  align-self: start;
+  justify-self: end;
+  width: min(100%, 34ch);
+  padding-right: clamp(0.25rem, 0.8vw, 0.625rem);
+}
+
+
+.img-cont h4 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.img-cont p {
+  margin: 0.25rem 0 0;
+  line-height: 1.35;
+}
+
+
+@media (max-width: 56.25rem) {
+  .img-cont > div:nth-child(2) { --step: 1rem; }
+  .img-cont > div:nth-child(3) { --step: 2rem; }
+  .img-cont > div:nth-child(4) { --step: 3rem; }
+}
+
+
+@media (max-width: 40rem) {
+  .img-cont {
+    align-items: stretch;
+  }
+
+  .img-cont > div {
+    --step: 0rem;
+    margin-right: 0;
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+
+  .img-cont > div > img {
+    grid-column: 1;
+    justify-self: end;
+    width: min(58vw, 15rem);
+  }
+
+  .img-cont > div > div:not(.vid-area) {
+    grid-column: 1;
+    padding-right: 0;
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .img-cont > .granddad-cont {
+    grid-template-columns: 1fr;
+    align-items: start;
+    row-gap: 0.5rem;
+  }
+
+  .img-cont > .granddad-cont > .vid-area {
+    grid-column: 1;
+    justify-self: start;
+    transform: none;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .img-cont > .granddad-cont > div:not(.vid-area),
+  .img-cont > .granddad-cont > img {
+    grid-column: 1;
+  }
+}
+
+.img-cont > .granddad-cont {
+  grid-template-columns: 0 1fr clamp(8.125rem, 18vw, 14.375rem);
+  column-gap: 0.75rem;
+  align-items: center;
+}
+
+.img-cont > .granddad-cont > .vid-area {
+  grid-column: 1;
+  justify-self: start;
+  width: max-content;
+  transform: translate(
+    calc(-100% - clamp(8.5rem, 18vw, 24rem)),
+    clamp(3rem, 11vh, 11rem)
+  );
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+}
+
+.vid-area-mobile {
+  width: min(75rem, 100% - 2rem);
+  margin: 0.75rem auto 1.75rem;
+  display: flex;
+  justify-content: center;
+  transform: none;
+}
+
+.img-cont > .granddad-cont > div:not(.vid-area) {
+  grid-column: 2;
+}
+
+.img-cont > .granddad-cont > img {
+  grid-column: 3;
+}
+
+.img-cont > div > .card-image-link {
+  grid-column: 2;
+  width: 100%;
+  display: block;
+}
+
+.img-cont > div > .card-image-link > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+
+.img-cont > .granddad-cont > .card-image-link {
+  grid-column: 3;
+}
+
+@media (max-width: 40rem) {
+  .img-cont > div > .card-image-link {
+    grid-column: 1;
+    justify-self: end;
+    width: min(58vw, 15rem);
+  }
+
+  .img-cont > .granddad-cont > .card-image-link {
+    grid-column: 1;
+  }
+}
+
+.vid-button {
+  border: 0;
+  border-radius: 62.4375rem;
+  padding: 0.75rem 1.375rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4b5563, #6b7280);
+  box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+.vid-button:hover {
+  transform: translateY(-0.0625rem);
+  box-shadow: 0 0.875rem 1.625rem rgba(0, 0, 0, 0.34);
+  filter: brightness(1.05);
+}
+
+.vid-button:active {
+  transform: translateY(0);
+}
+
+.vid-button:focus-visible {
+  outline: 0.1875rem solid rgba(255, 255, 255, 0.9);
+  outline-offset: 0.125rem;
+}
+
+.video-cont{
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: rgba(0, 0, 0, 0.72);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1.25rem;
+}
+
+#video {
+  height: 86vh;
+  width: min(94vw, calc(86vh * 16 / 9));
+  max-width: 94vw;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #000;
+  z-index: 5001;
+}
+
+.back-button {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  cursor: pointer;
+  z-index: 5001;
+}
+
+
+
+
+
+    </style>
+    </head>
+    <body>
+        <div class= "img-cont">
+        <div class="father-cont">
+            <a class="card-image-link" href="https://drive.google.com/file/d/1A3flDmo-MQKjA7Cne0BkUH5y6OHAS3fC/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src = "https://drive.google.com/thumbnail?id=1A3flDmo-MQKjA7Cne0BkUH5y6OHAS3fC&sz=w1600">
+            </a>
+            <div>
+                <h4>Мой папа</h4>
+                <p>Метько Николай Вячеславович</p>
+            </div>
+        </div>
+        <div class="granddad-cont">
+            <div class="vid-area">
+              <div class="vid-circle">
+                <button class="vid-button">Посмотреть видео</button>
+              </div>
+            </div>
+            <a class="card-image-link" href="https://drive.google.com/file/d/15JSWoll8CUjHTzviCi4fSAg3BYc5DYd1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src = "https://drive.google.com/thumbnail?id=15JSWoll8CUjHTzviCi4fSAg3BYc5DYd1&sz=w1600">
+            </a>
+            <div >
+                <h4>Мой дедушка</h4>
+                <p>Метько Вячеслав Александрович</p>
+            </div>
+        </div>
+        <div class="grandmother-cont">
+            <a class="card-image-link" href="https://drive.google.com/file/d/1ZoZpls93kuGgq022At8Kl2HMHaG0bas3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src = "https://drive.google.com/thumbnail?id=1ZoZpls93kuGgq022At8Kl2HMHaG0bas3&sz=w1600">
+            </a>
+            <div>
+                <h4>Моя бабушка</h4>
+                <p>Метько Наталья Николаевна</p>
+            </div>
+        </div>
+        <div class="uncle-cont">
+            <a class="card-image-link" href="https://drive.google.com/file/d/1a2bYyfNln8o5FmpLVW2JiYfeM6RFqWrJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src = "https://drive.google.com/thumbnail?id=1a2bYyfNln8o5FmpLVW2JiYfeM6RFqWrJ&sz=w1600">
+            </a>
+            <div>
+                <h4>Мой дядя</h4>
+                <p>Метько Александр Вячеславович</p>
+            </div>
+        </div>
+    </div>
+    <div class = "video-cont">
+        <iframe id="video" src="https://drive.google.com/file/d/1ywE8zTKAn4xyvAnEQhQlZp5N_dzlRYT_/preview" allow="autoplay" allowfullscreen></iframe>
+        <button class="back-button" type="button">Вернуться назад</button>
+    </div>
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector(".vid-button");
+  const videoContainer = document.querySelector(".video-cont");
+  const backButton = document.querySelector(".back-button");
+  const media = document.querySelector("#video");
+  const videoArea = document.querySelector(".vid-area");
+  const cardsContainer = document.querySelector(".img-cont");
+  const granddadCard = document.querySelector(".granddad-cont");
+
+  if (
+    !button ||
+    !videoContainer ||
+    !backButton ||
+    !media ||
+    !videoArea ||
+    !cardsContainer ||
+    !granddadCard
+  ) {
+    return;
+  }
+
+  const moveButtonForViewport = () => {
+    if (window.matchMedia("(max-width: 40rem)").matches) {
+      cardsContainer.insertAdjacentElement("afterend", videoArea);
+      videoArea.classList.add("vid-area-mobile");
+    } else {
+      granddadCard.insertAdjacentElement("afterbegin", videoArea);
+      videoArea.classList.remove("vid-area-mobile");
+    }
+  };
+
+  moveButtonForViewport();
+  window.addEventListener("resize", moveButtonForViewport);
+
+  button.addEventListener("click", () => {
+    videoContainer.style.display = "flex";
+  });
+
+  backButton.addEventListener("click", () => {
+    videoContainer.style.display = "none";
+
+    if (media.tagName === "VIDEO") {
+      media.pause();
+      media.currentTime = 0;
+    } else if (media.tagName === "IFRAME") {
+      const currentSrc = media.src;
+      media.src = "";
+      media.src = currentSrc;
+    }
+  });
+});
+</script>
+    </body>
+</html>
+
+
+
+
+
